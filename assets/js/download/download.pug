@@ -1,6 +1,6 @@
 .row.text-center
   .col-md-12
-    h2 Download our #{process.env.WEBSITE_APP_TITLE || 'Electron App'}
+    h2 Duels+ Launcher Updates
       small.pull-right
         | Channel: 
         select(
@@ -20,7 +20,7 @@
     .jumbotron
       h4 OS X 
         span.text-muted 64 bit INTEL
-      a.btn.btn-success.btn-lg(
+      a.btn.btn-primary.btn-lg(
         ng-click="vm.download(vm.latestReleases['64'])"
         )
         i.fa.fa-download.fa-5x
@@ -40,7 +40,7 @@
     .jumbotron
       h4 OS X 
         span.text-muted 64 bit ARM
-      a.btn.btn-success.btn-lg(
+      a.btn.btn-primary.btn-lg(
         ng-click="vm.download(vm.latestReleases['arm64'])"
         )
         i.fa.fa-download.fa-5x
@@ -66,7 +66,7 @@
         ng-class="vm.latestReleases['64'] ? 'col-sm-6' : 'col-sm-12'"
         )
         h5.text-muted 32 bit
-        a.btn.btn-success.btn-lg(
+        a.btn.btn-primary.btn-lg(
           ng-click="vm.download(vm.latestReleases['32'])"
           )
           i.fa.fa-download.fa-5x
@@ -87,7 +87,7 @@
         ng-class="vm.latestReleases['32'] ? 'col-sm-6' : 'col-sm-12'"
         )
         h5.text-muted 64 bit
-        a.btn.btn-success.btn-lg(
+        a.btn.btn-primary.btn-lg(
           ng-click="vm.download(vm.latestReleases['64'])"
           )
           i.fa.fa-download.fa-5x
@@ -122,14 +122,14 @@
         p.timestamp.text-muted(am-time-ago="version.createdAt")
         h4 {{ version.name }} 
           label.label(
-            ng-class="version.channel.name === 'stable' ? 'label-success' : 'label-info'"
+            ng-class="version.channel.name === 'stable' ? 'label-primary' : 'label-info'"
             )
             | {{ version.channel.name }}
         p.release-notes.text-muted(
           ng-show="version.notes"
           ng-bind-html="version.notes"
           )
-        button.btn.btn-sm.btn-success.download-btn(
+        button.btn.btn-sm.btn-primary.download-btn(
           ng-repeat="asset in version.assets"
           ng-click="vm.download(asset, version.name, version.flavor.name)"
           ng-if="vm.filetypes[asset.platform].includes(asset.filetype)"

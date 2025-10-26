@@ -7,7 +7,6 @@
  */
 module.exports.channels = [
   'stable',
-  'rc',
   'beta',
-  'alpha'
+  'dev'
 ];

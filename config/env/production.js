@@ -21,12 +21,23 @@ module.exports = {
     datastore: 'postgresql',
     migrate: 'safe'
   },
+  sockets: {
+    onlyAllowOrigins: ['https://launcher-updates.duelsplus.com']
+  },
+  session: {
+    cookie: { secure: false },
+    proxy: true
+  },
+  http: {
+    trustProxy: true
+  },
+  trustProxy: true,
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
    ***************************************************************************/
 
-  port: 5014,
+  port: 5014
 
   /***************************************************************************
    * Set the log level in production environment to "silent"                 *
